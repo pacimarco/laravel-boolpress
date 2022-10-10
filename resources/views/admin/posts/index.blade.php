@@ -25,7 +25,7 @@
                     <td>{{ $post->slug }}</td>
                     <td>
                         <a href="{{route('admin.posts.show',['post'=>$post->id])}}" class="btn btn-primay">show</a>
-                        <a href="#" class="btn btn-primay">edit</a>
+                        <a href="{{route('admin.posts.edit',['post'=>$post->id])}}" class="btn btn-primay">edit</a>
                     </td>
                 </tr>
             @endforeach

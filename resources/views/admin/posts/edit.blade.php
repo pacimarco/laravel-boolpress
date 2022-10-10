@@ -3,14 +3,15 @@
 @section('content')
 <div class="container">
 
-    <form action="{{route('admin.posts.store')}}" method="POST">
+    <form action="{{route('admin.posts.update', ['post' => $post->id])}}" method="POST">
     @csrf
+    @method('PUT')
 
-    <h1>Add post</h1>
+    <h1>edit post</h1>
     <div class="form-group">
 
         <label for="title">title</label>
-        <input type="text" class="form-control @error('title')is-invalid @enderror" required id="title" name="title" max="255" value="{{old('title')}}">
+        <input type="text" class="form-control @error('title')is-invalid @enderror" required id="title" name="title" max="255" value="{{old('title',$post->title)}}">
         @error('title')
             
         @enderror
@@ -21,7 +22,7 @@
     </div>
     <div class="form-group">
         <label for="content">content</label>
-        <textarea class="form-control @error('content')is-invalid @enderror" name="content" require id="content">value="{{old('content')}}"</textarea>
+        <textarea class="form-control @error('content')is-invalid @enderror" name="content" require id="content">value="{{old('content', $post->content)}}"</textarea>
         @error('content')
             
         @enderror
@@ -31,7 +32,7 @@
         @enderror
     </div>
     
-    <button type="submit" class="btn btn-primary">create post</button>
+    <button type="submit" class="btn btn-primary">update</button>
     </form>
 
 </div>
