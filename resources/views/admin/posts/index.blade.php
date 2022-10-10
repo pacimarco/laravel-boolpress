@@ -3,6 +3,10 @@
 @section('content')
 
 <div class="container">
+    <div class="mb-4 d-flex justify-content-end">
+        <a class="btn btn-primary" href="{{route('admin.posts.create')}}">add new post</a>
+    </div>
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -20,7 +24,7 @@
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->slug }}</td>
                     <td>
-                        <a href="#" class="btn btn-primay">show</a>
+                        <a href="{{route('admin.posts.show',['post'=>$post->id])}}" class="btn btn-primay">show</a>
                         <a href="#" class="btn btn-primay">edit</a>
                     </td>
                 </tr>
