@@ -20,12 +20,17 @@
         <tbody>
             @foreach($posts as $post)
                 <tr>
-                    <th scope="row">{{ $loop->id }}</th>
+                    <th scope="row">{{ $post->id }}</th>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->slug }}</td>
                     <td>
-                        <a href="{{route('admin.posts.show',['post'=>$post->id])}}" class="btn btn-primay">show</a>
-                        <a href="{{route('admin.posts.edit',['post'=>$post->id])}}" class="btn btn-primay">edit</a>
+                        <a href="{{route('admin.posts.show',['post'=>$post->id])}}" class="btn btn-primary">show</a>
+                        <a href="{{route('admin.posts.edit',['post'=>$post->id])}}" class="btn btn-primary">edit</a>
+                        <form method="POST" action="{{route('admin.posts.destroy',['post'=>$post->id])}}}}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

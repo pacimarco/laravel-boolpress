@@ -13,7 +13,7 @@
         <input type="text" class="form-control @error('title')is-invalid @enderror" required id="title" name="title" max="255" value="{{old('title')}}">
         @error('title')
             
-        @enderror
+        
         <div class="invalid-feedback">
             {{$message}}
         </div>
@@ -24,7 +24,7 @@
         <textarea class="form-control @error('content')is-invalid @enderror" name="content" require id="content">value="{{old('content')}}"</textarea>
         @error('content')
             
-        @enderror
+        
         <div class="invalid-feedback">
             {{$message}}
         </div>
