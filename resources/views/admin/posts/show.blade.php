@@ -16,7 +16,7 @@
     {{$post->slug}}
 </div>
 
-<a href="{{route('admin.posts.index')}}" class="btn btn-prymary">back</a>
+<a href="{{route('admin.posts.index')}}" class="btn btn-primary">back</a>
 
 </div>
 

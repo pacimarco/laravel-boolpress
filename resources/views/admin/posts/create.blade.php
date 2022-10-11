@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
         <label for="content">content</label>
-        <textarea class="form-control @error('content')is-invalid @enderror" name="content" require id="content">value="{{old('content')}}"</textarea>
+        <textarea class="form-control @error('content')is-invalid @enderror" name="content" require id="content">{{old('content')}}</textarea>
         @error('content')
             
         
