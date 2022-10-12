@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
 use illuminate\Support\Str;
 
@@ -27,7 +28,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $categories = Category::all();
+        return view('admin.posts.create',('categories'));
     }
 
     /**
@@ -40,7 +42,8 @@ class PostController extends Controller
     {
         $request->validate([
             'title'=>'required|max:255',
-            'content'=>'required|max:65535'
+            'content'=>'required|max:65535',
+            'category_id'=>'nullable|exists:categories,id'
         ]);
 
         $data = $request->all();

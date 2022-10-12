@@ -15,6 +15,10 @@
     <span class="fw-bold">slug:</span>
     {{$post->slug}}
 </div>
+<div>
+    <span class="fw-bold">category:</span>
+    {{$post->category}}
+</div>
 
 <a href="{{route('admin.posts.index')}}" class="btn btn-primary">back</a>
 
