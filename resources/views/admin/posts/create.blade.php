@@ -50,6 +50,22 @@
         @enderror
     </div>
     
+    
+        <div>tag:</div>
+
+        @foreach ($tags as $tag)
+        <div class="form-group form-check">
+
+            <input type="checkbox" name="tags[]" class="form-check-input" id="tag-{{$tag->id}}" value="{{$tag->id}}">
+            <label class="form-check-label" for="tag-{{$tag->id}}">{{$tag->name}}</label>
+        </div>   
+            @endforeach
+    
+
+
+
+
+
     <button type="submit" class="btn btn-primary">create post</button>
     </form>
 
