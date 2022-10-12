@@ -45,7 +45,8 @@ class PostController extends Controller
         $request->validate([
             'title'=>'required|max:255',
             'content'=>'required|max:65535',
-            'category_id'=>'nullable|exists:categories,id'
+            'category_id'=>'nullable|exists:categories,id',
+            'tags'=> 'exists:tags,id'
         ]);
 
         $data = $request->all();
@@ -66,7 +67,10 @@ class PostController extends Controller
         }
         $post->slug = $slug;
         $post->save();
-        return redirect()->route('admin.posts.index')->with('status','post creato con successo');
+
+        $post->tags()->sync($data['tags']);
+
+        return redirect()->route('admin.posts.index')->with('status','post creato!');
     }
 
     /**
