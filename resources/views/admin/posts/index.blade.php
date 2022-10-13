@@ -15,6 +15,7 @@
                 <th scope="col">Slug</th>
                 <th scope="col">Category</th>
                 <th scope="col">Action</th>
+                <th scope="col">Tag</th>
                 
             </tr>
         </thead>
