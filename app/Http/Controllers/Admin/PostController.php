@@ -131,7 +131,7 @@ class PostController extends Controller
         $data['slug']= $slug;
         }
         $post->update($data);
-        
+
         if (array_key_exists('tags',$data)){
             $post->tags()->sync($data['tags']);
         }else{
@@ -150,6 +150,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $post->tags()->sync([]);//cancello le relazioni della tabella ponte altrimenti error//
+        
         $post->delete();
         return redirect()->route('admin.posts.index')->with('status','cancellazione riuscita!');
     }
