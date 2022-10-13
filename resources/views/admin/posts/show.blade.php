@@ -19,7 +19,13 @@
     <span class="fw-bold">category:</span>
     {{$post->category}}
 </div>
-
+<div>
+    <span class="fw-bold">tag:</span>
+    @foreach ($post->tags as $tag )
+    {{$tag->name}};
+        
+    @endforeach
+</div>
 <a href="{{route('admin.posts.index')}}" class="btn btn-primary">back</a>
 
 </div>

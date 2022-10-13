@@ -34,6 +34,12 @@
                             <button class="btn btn-danger">delete</button>
                         </form>
                     </td>
+                    <td>
+                        @foreach ($post->tags as $tag )
+                        {{$tag->name}};
+        
+                        @endforeach
+                    </td>
                 </tr>
             @endforeach
         </tbody>
