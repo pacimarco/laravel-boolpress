@@ -56,13 +56,19 @@
         @foreach ($tags as $tag)
         <div class="form-group form-check">
 
-            <input type="checkbox" name="tags[]" class="form-check-input" id="tag-{{$tag->id}}" value="{{$tag->id}}">
+            <input {{(in_array($tag->id, old('tags',[])))?'checked':''}} type="checkbox"  name="tags[]" class="form-check-input" id="tag-{{$tag->id}}" value="{{$tag->id}}">
             <label class="form-check-label" for="tag-{{$tag->id}}">{{$tag->name}}</label>
         </div>   
             @endforeach
     
 
-
+            @error('tags')
+            
+        
+            <div class="alert alert-danger">
+                {{$message}}
+            </div>
+            @enderror
 
 
 
