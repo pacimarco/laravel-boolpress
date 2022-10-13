@@ -93,7 +93,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
-        return view('admin.posts.edit', compact('post','categories'));
+        $tags = Tag::all();
+        return view('admin.posts.edit', compact('post','categories','tags'));
     }
 
     /**
@@ -107,7 +108,8 @@ class PostController extends Controller
     {
         $request->validate([
             'title'=>'required|max:255',
-            'content'=>'required|max:65535'
+            'content'=>'required|max:65535',
+            'tags'=> 'exists:tags,id'
         ]
 
         );
@@ -129,6 +131,12 @@ class PostController extends Controller
         $data['slug']= $slug;
         }
         $post->update($data);
+        if (array_key_exists('tags',$data)){
+            $post->tags()->sync($data['tags']);
+        }else{
+            $post->tags()->sync([]);
+        }
+
         return redirect()->route('admin.posts.index')->with('status','post aggiornato con successo');
 
     }

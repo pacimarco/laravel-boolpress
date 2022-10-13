@@ -59,5 +59,24 @@
 
 </div>
 
+<div>tag:</div>
+
+        @foreach ($tags as $tag)
+        <div class="form-group form-check">
+
+            <input {{($post->$tag->contains($tag))?'checked':''}} type="checkbox"  name="tags[]" class="form-check-input" id="tag-{{$tag->id}}" value="{{$tag->id}}">
+            <label class="form-check-label" for="tag-{{$tag->id}}">{{$tag->name}}</label>
+        </div>   
+            @endforeach
+    
+
+            @error('tags')
+            
+        
+            <div class="alert alert-danger">
+                {{$message}}
+            </div>
+            @enderror
+
 
 @endsection
