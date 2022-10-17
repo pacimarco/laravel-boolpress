@@ -1,8 +1,8 @@
 <template>
     <div>
+        ciao
         <MyHeader/>
-        <h1>Work in progress</h1>
-        <h2>Sito in costruzione</h2>
+        <MyMain/>
     </div>
 </template>
 

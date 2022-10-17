@@ -6,8 +6,10 @@
             <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div  id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+                    
+                    {{menuItems}}
                     <li v-for="(item, index) in menuItems" class="nav-item" :key="index">
                         <a class="nav-link" :href="item.link">{{item.label}}</a>
                     </li>
