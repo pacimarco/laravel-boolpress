@@ -1958,6 +1958,7 @@ __webpack_require__.r(__webpack_exports__);
           page: page
         }
       }).then(function (response) {
+        console.log(response);
         _this.posts = response.data.results.data;
         _this.currentPage = response.data.results.current_page;
         _this.lastPage = response.data.results.last_page;
@@ -2116,10 +2117,7 @@ var render = function render() {
   }, [_vm._v("Previous")])]), _vm._v(" "), _c("li", {
     staticClass: "page-item disabled"
   }, [_c("span", {
-    staticClass: "page-link",
-    attrs: {
-      href: "#"
-    }
+    staticClass: "page-link"
   }, [_vm._v(_vm._s(_vm.currentPage) + "/" + _vm._s(_vm.lastPage))])]), _vm._v(" "), _c("li", {
     staticClass: "page-item",
     "class": _vm.currentPage == _vm.lastPage ? "disabled" : ""
