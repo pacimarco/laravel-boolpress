@@ -1954,6 +1954,9 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/api/posts').then(function (response) {
         _this.posts = response.data.results;
       });
+    },
+    truncateText: function truncateText(text, maxLength) {
+      return text.substring(0, maxLength) + '...';
     }
   },
   mounted: function mounted() {
@@ -2078,7 +2081,9 @@ var render = function render() {
       staticClass: "card-title"
     }, [_vm._v(_vm._s(post.title))]), _vm._v(" "), _c("p", {
       staticClass: "card-text"
-    }, [_vm._v(_vm._s(post.content))]), _vm._v(" "), _c("a", {
+    }, [_vm._v(_vm._s(_vm.truncateText(post.content, 60)))]), _vm._v(" "), _c("p", {
+      staticClass: "card-text"
+    }, [_vm._v(_vm._s(post.category ? post.category.name : "-"))]), _vm._v(" "), _c("a", {
       staticClass: "btn btn-primary",
       attrs: {
         href: "#"
