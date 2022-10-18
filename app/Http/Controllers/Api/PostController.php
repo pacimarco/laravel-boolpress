@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with(['category','tags'])->get();
+        $posts = Post::with(['category','tags'])->paginate(2);
 
         return response()->json([
             'success' => true,
@@ -31,7 +31,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
         //
     }

@@ -10,6 +10,13 @@
             </div>
         </div>
     </div>
+    <nav>
+        <ul class="pagination justify-content-center">
+            <li class="page-item" :class="(currentPage==1?'disabled':'')"><a class="page-link" href="#" @click.prevent="getPosts(currentPage - 1)">Previous</a></li>
+            <li class="page-item disabled"><span class="page-link" href="#">{{currentPage}}/{{lastPage}}</span></li>
+            <li class="page-item" :class="(currentPage==lastPage)?'disabled':''"><a class="page-link" href="#" @click.prevent="getPosts(currentPage + 1)">Next</a></li>
+        </ul>
+    </nav>
   </div>
 </template>
 
@@ -18,14 +25,23 @@ export default {
     name:'MyMain',
     data() {
         return {
-            posts: []
+            posts: [],
+            currentPage: 1,
+            lastPage: null,
+
         }
     },
     methods:{
-        getPosts(){
-            axios.get('/api/posts')
+        getPosts(page){
+            axios.get('/api/posts',{
+                params:{
+                    page:page
+                }
+            })
             .then((response) => {
-                this.posts = response.data.results;
+                this.posts = response.data.results.data;
+                this.currentPage = response.data.results.current_page;
+                this.lastPage = response.data.results.last_page;
             });
         },
         truncateText(text, maxLength){
@@ -33,7 +49,7 @@ export default {
         }
     },
     mounted(){
-        this.getPosts();
+        this.getPosts(1);
     }
 }
 </script>
