@@ -11,7 +11,7 @@
                     
                     
                     <li v-for="(item, index) in menuItems" class="nav-item" :key="index">
-                        <a class="nav-link" :href="item.link">{{item.label}}</a>
+                        <router-link class="nav-link" :to="{name: item.routeName}">{{item.label}}</router-link>
                     </li>
                 </ul>
             </div>
@@ -26,21 +26,23 @@
         name: 'MyHeader',
         data(){
             return {
-            menuItems:[{
+            menuItems:[
+                {
                 label:'Home',
-                link:'#'
+                routeName:'home'
             },
+            
             {
                 label:'Blog',
-                link:'#'
+                routeName:'blog'
             },
             {
                 label:'About us',
-                link:'#'
+                routeName:'aboutus'
             },
             {
                 label:'Contacs',
-                link:'#'
+                routeName:'contact'
             },
         ]
         }
