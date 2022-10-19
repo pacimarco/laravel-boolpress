@@ -4,14 +4,14 @@
                 <h4 class="card-title">{{post.title}}</h4>
                 <p class="card-text">{{truncateText(post.content,60)}}</p>
                 <p class="card-text">{{post.category?post.category.name:'-'}}</p>
-                <a class="btn btn-primary" href="#">Continue to read</a>
+                <router-link :to="{name:'single-post', params:{slug: post.slug}}" class="btn btn-primary">Continue to read</router-link>
             </div>
 </div>
 </template>
 
 <script>
 export default {
-    name: 'SinglePost',
+    name: 'MyPost',
     props:['post'],
     methods:{
         truncateText(text, maxLength){

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-        <SinglePost v-for="(post,index) in posts" :key="index" :post="post"/>
+        <MyPost v-for="(post,index) in posts" :key="index" :post="post"/>
     </div>
     <nav>
         <ul class="pagination justify-content-center">

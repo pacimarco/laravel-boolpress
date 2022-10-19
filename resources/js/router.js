@@ -8,6 +8,7 @@ import PageAboutus from './pages/PageAboutus.vue';
 import PageHome from './pages/PageHome.vue';
 import PostsPage from './pages/PostsPage.vue';
 import ErrorNotFound from './pages/ErrorNotFound';
+import SinglePost from './pages/SinglePost.vue';
 
 const router = new VueRouter({
     mode: "history",
