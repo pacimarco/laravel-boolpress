@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import SinglePost from '../components/SinglePost.vue'
+import Mypost from '../components/MyPost.vue'
 export default {
     name:'PostsPage',
     components:{
-      SinglePost
+      MyPost
     },
     data() {
         return {
