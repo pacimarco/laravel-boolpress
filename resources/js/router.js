@@ -7,7 +7,7 @@ import PageContact from './pages/PageContact.vue';
 import PageAboutus from './pages/PageAboutus.vue';
 import PageHome from './pages/PageHome.vue';
 import PostsPage from './pages/PostsPage.vue';
-import ErrorNotFound from './pages/ErrorNotFound';
+import ErrorNotFound from './pages/ErrorNotFound.vue';
 import SinglePost from './pages/SinglePost.vue';
 
 const router = new VueRouter({

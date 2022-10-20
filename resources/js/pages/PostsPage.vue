@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Mypost from '../components/MyPost.vue'
+import MyPost from '../components/MyPost.vue'
 export default {
     name:'PostsPage',
     components:{

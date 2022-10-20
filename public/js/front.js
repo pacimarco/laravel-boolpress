@@ -2041,7 +2041,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'PostsPage',
   components: {
-    MyPost: MyPost
+    MyPost: _components_MyPost_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
@@ -53942,7 +53942,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_PageAboutus_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/PageAboutus.vue */ "./resources/js/pages/PageAboutus.vue");
 /* harmony import */ var _pages_PageHome_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/PageHome.vue */ "./resources/js/pages/PageHome.vue");
 /* harmony import */ var _pages_PostsPage_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/PostsPage.vue */ "./resources/js/pages/PostsPage.vue");
-/* harmony import */ var _pages_ErrorNotFound__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/ErrorNotFound */ "./resources/js/pages/ErrorNotFound.vue");
+/* harmony import */ var _pages_ErrorNotFound_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/ErrorNotFound.vue */ "./resources/js/pages/ErrorNotFound.vue");
 /* harmony import */ var _pages_SinglePost_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/SinglePost.vue */ "./resources/js/pages/SinglePost.vue");
 
 
@@ -53978,7 +53978,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }, {
     path: "/*",
     name: "not-found",
-    component: _pages_ErrorNotFound__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _pages_ErrorNotFound_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
